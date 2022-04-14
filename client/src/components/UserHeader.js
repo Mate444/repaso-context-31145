@@ -1,21 +1,8 @@
-const UserHeader = (props) => {
-  const { user } = props;
-
-  const formatUser = (userType) => {
-    switch(userType) {
-      case 'Admin': {
-        return 'Administrador'
-      }
-      case 'User': {
-        return 'Usuario'
-      }
-      case 'Guest': {
-        return 'Invitado'
-      }
-      default: return userType
-    }
-  }
-
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
+import { formatUser } from '../utils/utils';
+const UserHeader = () => {
+  const { user } = useContext(UserContext);
   return (
     <header>
       <h1>Bienvenido {formatUser(user)}!</h1>

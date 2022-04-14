@@ -1,14 +1,14 @@
 import './App.css';
-import Home from './components/Home';
 import { UserProvider } from './context/UserContext';
+import Home from './components/Home';
 
 const App = () => {
   return (
-    <UserProvider>
-      <div className="App">
-        <Home />
-      </div>
-    </UserProvider>
+    <div>
+  <UserProvider>
+    <Home />
+  </UserProvider>  
+    </div>
   );
 }
 
